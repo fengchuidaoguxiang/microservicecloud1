@@ -14,7 +14,9 @@ import java.util.List;
 @RequestMapping("/consumer/dept")
 public class DeptController_Consumer {
 
-    private static final String REST_URL_PREFIX = "http://localhost:8001";
+//    private static final String REST_URL_PREFIX = "http://localhost:8001";
+    private static final String REST_URL_PREFIX = "http://MICROSERVICECLOUD-DEPT";
+
 
     /**
      * 使用restTemplate访问restful接口非常的简单粗暴无脑。
@@ -39,5 +41,11 @@ public class DeptController_Consumer {
     public List<Dept> list(){
 
         return restTemplate.getForObject(REST_URL_PREFIX + "/dept/list" ,List.class);
+    }
+
+    //测试@EnableDiscoveryClient,消费端可以调用服务发现
+    @GetMapping("/discovery")
+    public Object discovery(){
+        return restTemplate.getForObject(REST_URL_PREFIX + "/dept/discovery", Object.class);
     }
 }
