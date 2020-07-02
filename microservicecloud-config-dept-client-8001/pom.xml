@@ -11,7 +11,7 @@
 
     <artifactId>microservicecloud-config-dept-client-8001</artifactId>
     <properties>
-        <mysql.version>8.0.17</mysql.version>
+        <mysql.version>8.0.16</mysql.version>
     </properties>
 
     <dependencies>
